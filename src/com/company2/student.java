@@ -1,26 +1,20 @@
 package com.company2;
+import java.io.IOException;
 import java.lang.*;
 
- class MultipleCatchBlock1 {
-
-    public static void main(String[] args) {
-
-        try{
-            int a[]=new int[5];
-            a[5]=30/0;
-        }
-        catch(ArithmeticException e)
-        {
-            System.out.println("Arithmetic Exception occurs");
-        }
-        catch(ArrayIndexOutOfBoundsException e)
-        {
-            System.out.println("ArrayIndexOutOfBounds Exception occurs");
-        }
-        catch(Exception e)
-        {
-            System.out.println("Parent Exception occurs");
-        }
-        System.out.println("rest of the code");
-    }
+class Animal{
+    void eat(){System.out.println("eating...");}
 }
+class Dog extends Animal{
+    void bark(){System.out.println("barking...");}
+}
+class Cat extends Animal{
+    void meow(){System.out.println("meowing...");}
+}
+class TestInheritance3{
+    public static void main(String args[]){
+        Cat c=new Cat();
+        c.meow();
+        c.eat();
+//c.bark();//C.T.Error
+    }}
