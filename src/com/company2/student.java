@@ -2,19 +2,27 @@ package com.company2;
 import java.io.IOException;
 import java.lang.*;
 
-class Animal{
-    void eat(){System.out.println("eating...");}
+class Operation{
+    int square(int n){
+        return n*n;
+    }
 }
-class Dog extends Animal{
-    void bark(){System.out.println("barking...");}
-}
-class Cat extends Animal{
-    void meow(){System.out.println("meowing...");}
-}
-class TestInheritance3{
+
+class Circle{
+    Operation op;//aggregation
+    double pi=3.14;
+
+    double area(int radius){
+        op=new Operation();
+        int rsquare=op.square(radius);//code reusability (i.e. delegates the method call).
+        return pi*rsquare;
+    }
+
+
+
     public static void main(String args[]){
-        Cat c=new Cat();
-        c.meow();
-        c.eat();
-//c.bark();//C.T.Error
-    }}
+        Circle c=new Circle();
+        double result=c.area(5);
+        System.out.println(result);
+    }
+}
