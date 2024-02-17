@@ -1,13 +1,28 @@
 package com.company2;
 import java.io.IOException;
-import java.lang.*;
+import java.util.*;
 
-class OverloadingCalculation2{
-    void sum(int a,int b){System.out.println("int arg method invoked");}
-    void sum(long a,long b){System.out.println("long arg method invoked");}
+// Java program for the above approach
+import java.util.*;
 
-    public static void main(String args[]){
-        OverloadingCalculation2 obj=new OverloadingCalculation2();
-        obj.sum(20,20);//now int arg sum() method gets invoked
+class Person{
+    int id;
+    String name;
+    Person(int id,String name){
+        this.id=id;
+        this.name=name;
     }
 }
+class Emp extends Person{
+    float salary;
+    Emp(int id,String name,float salary){
+        super(id,name);//reusing parent constructor
+        this.salary=salary;
+    }
+    void display(){System.out.println(id+" "+name+" "+salary);}
+}
+class TestSuper5{
+    public static void main(String[] args){
+        Emp e1=new Emp(1,"ankit",45000f);
+        e1.display();
+    }}
